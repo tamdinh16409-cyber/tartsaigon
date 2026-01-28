@@ -1,0 +1,338 @@
+/* ================= GLOBAL ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f4ece2;
+    color: #3b2f2f;
+}
+
+/* ================= NAVIGATION BAR ================= */
+nav {
+    width: 100%;
+    background: #5a3b2e;
+    padding: 15px 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+}
+
+nav .logo img {
+    height: 45px;
+}
+
+nav ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    color: #f5d7b4;
+    text-decoration: none;
+    font-size: 16px;
+    transition: .2s;
+}
+
+nav ul li a:hover {
+    color: white;
+}
+
+/* ================= DROPDOWN ================= */
+.dropdown-menu {
+    position: absolute;
+    background: white;
+    top: 45px;
+    padding: 15px;
+    border-radius: 10px;
+    display: none;
+    flex-direction: column;
+    min-width: 180px;
+}
+
+.dropdown-menu a {
+    color: #5a3b2e !important;
+    padding: 8px 0;
+}
+
+nav ul li:hover .dropdown-menu {
+    display: flex;
+}
+
+/* ================= HEADER BANNER ================= */
+.header {
+    width: 100%;
+    height: 100vh;
+    background: url("assets/img/combo.jpg") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-text {
+    text-align: center;
+    color: white;
+    text-shadow: 0px 3px 10px rgba(0,0,0,0.5);
+    font-size: 50px;
+}
+
+/* ================= PRODUCT PAGE ================= */
+.page {
+    padding-top: 120px;
+    width: 100%;
+    display: flex;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 280px;
+    padding: 40px 20px;
+    border-right: 2px solid #d4c2ad;
+    position: sticky;
+    top: 120px;
+    height: calc(100vh - 120px);
+}
+
+.sidebar h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.sidebar a {
+    display: block;
+    margin-bottom: 14px;
+    color: #5a3b2e;
+    text-decoration: none;
+    transition: .2s;
+}
+
+.sidebar a:hover {
+    color: #b06c3e;
+}
+
+/* PRODUCT CONTENT */
+.content {
+    flex: 1;
+    padding: 40px 60px;
+}
+
+.category-title {
+    font-size: 30px;
+    margin-bottom: 40px;
+}
+
+.product-card {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 18px;
+    padding: 25px;
+    margin-bottom: 35px;
+    gap: 25px;
+}
+
+.product-card img {
+    width: 200px;
+    border-radius: 14px;
+}
+
+.product-info h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* ================= FOOTER ================= */
+footer {
+    background: #5a3b2e;
+    padding: 40px;
+    color: #f5d7b4;
+    margin-top: 80px;
+    text-align: center;
+}
+
+@media (max-width: 900px) {
+    nav {
+        padding: 15px 30px;
+    }
+    
+    .page {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 100%;
+        position: relative;
+        top: 0;
+        height: auto;
+        border: none;
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+    }
+}
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   /* QUAN TRỌNG: giúp video auto crop và không méo */
+    z-index: -1;         /* Cho video nằm sau chữ */
+}
+
+.header {
+    position: relative;
+    width: 100%;
+    height: 100vh;       /* full màn hình */
+    overflow: hidden;    /* ẩn phần video tràn */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hero-video {
+    filter: brightness(0.6);
+}
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* full màn hình */
+    overflow: hidden;
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* FULL WIDTH + CROP */
+}
+
+.hero-text {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    font-size: 52px;
+    font-weight: 700;
+    color: white;
+    text-shadow: 0 3px 8px rgba(0,0,0,0.6);
+}
+body {
+    background: #F5E9D3;
+}
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 68px;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 4px;
+    text-shadow: 0 5px 15px rgba(0,0,0,0.6);
+}
+.hero-text {
+    animation: fadeIn 1.4s ease-out forwards;
+    opacity: 0;
+}
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+footer {
+    background: #4b2e1f; /* nâu đậm */
+    color: #f8e9d8; /* beige sáng */
+    padding: 40px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    font-family: 'Montserrat', sans-serif; /* dùng font elegant */
+    gap: 40px;
+}
+
+footer h3 {
+    font-size: 22px;
+    margin-bottom: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+footer p {
+    margin: 6px 0;
+    font-size: 15px;
+    opacity: 0.9;
+}
+
+.footer-right a {
+    display: block;
+    margin: 6px 0;
+    font-size: 15px;
+    color: #f8e9d8;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.footer-right a:hover {
+    color: #ffce8b; /* highlight */
+    transform: translateX(3px);
+}
+
+footer .footer-left,
+footer .footer-right {
+    min-width: 240px;
+}
+@media (max-width: 600px) {
+    footer {
+        padding: 30px 20px;
+        text-align: left;
+        gap: 25px;
+    }
+
+    footer h3 {
+        font-size: 18px;
+    }
+
+    footer p,
+    .footer-right a {
+        font-size: 14px;
+    }
+}
+.footer-right a {
+    color: #f8e9d8;
+    margin-right: 12px;
+    text-decoration: none;
+    transition: .2s;
+}
+
+.footer-right a:hover {
+    color: #ffce8b;
+}
+
+.icon {
+    width: 22px;
+    filter: invert(90%);
+    opacity: 0.8;
+    transition: .2s;
+}
+
+.icon:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
