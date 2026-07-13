@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tart Saigon - Dashboard</title>
+    <!-- Google Fonts & FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="admin-layout">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar" id="sidebar"></aside>
+
+        <!-- Main Dashboard Panel -->
+        <main class="main-content">
+            <header class="page-header fade-in">
+                <div class="page-header-left">
+                    <h1><i class="fa-solid fa-chart-pie"></i> Bảng điều khiển</h1>
+                    <div class="breadcrumb">
+                        <span>Hệ thống</span>
+                        <span class="sep">></span>
+                        <a href="index.html">Bảng điều khiển</a>
+                    </div>
+                </div>
+                <div class="page-header-right">
+                    <button class="btn btn-secondary btn-sm" onclick="location.reload()">
+                        <i class="fa-solid fa-rotate"></i> Làm mới dữ liệu
+                    </button>
+                    <a href="hoadon/form.html" class="btn btn-primary btn-sm">
+                        <i class="fa-solid fa-cart-plus"></i> Tạo đơn hàng mới
+                    </a>
+                </div>
+            </header>
+
+            <!-- Stat Cards Section -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon primary">
+                        <i class="fa-solid fa-money-bill-trend-up"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Doanh thu hôm nay</h3>
+                        <div class="stat-value" id="stat-revenue">0đ</div>
+                        <div class="stat-change up"><i class="fa-solid fa-caret-up"></i> +12% so với hôm qua</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon success">
+                        <i class="fa-solid fa-receipt"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Đơn hàng hoàn thành</h3>
+                        <div class="stat-value" id="stat-completed-orders">0</div>
+                        <div class="stat-change up"><i class="fa-solid fa-caret-up"></i> +4 đơn hàng mới</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon warning">
+                        <i class="fa-solid fa-spinner"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Đơn đang pha chế</h3>
+                        <div class="stat-value" id="stat-pending-orders">0</div>
+                        <div class="stat-change down"><i class="fa-solid fa-clock"></i> Cần pha chế ngay</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon info">
+                        <i class="fa-solid fa-user-plus"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Khách hàng thành viên</h3>
+                        <div class="stat-value" id="stat-customers">0</div>
+                        <div class="stat-change up"><i class="fa-solid fa-caret-up"></i> +5 đăng ký mới</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video TVC & Media Section -->
+            <section class="media-section fade-in">
+                <div class="table-header" style="background: none; border: none; padding: 0 0 16px 0;">
+                    <h2><i class="fa-solid fa-video"></i> Video TVC & Giới thiệu cửa hàng</h2>
+                </div>
+                <div class="media-grid">
+                    <div class="media-card">
+                        <video controls poster="../img/z7972614229089_57d539e613a9892de5cd2c9d3320d1a3.jpg">
+                            <source src="../vd/TVC Tart.mp4" type="video/mp4">
+                            Trình duyệt của bạn không hỗ trợ tag video.
+                        </video>
+                        <div class="media-info">
+                            <h4>TVC Tart Saigon - Trải nghiệm vị giác</h4>
+                            <p>Video giới thiệu quy trình làm bánh tart trứng giòn rụm và chuẩn vị.</p>
+                        </div>
+                    </div>
+                    <div class="media-card">
+                        <video controls>
+                            <source src="../vd/shortvideo1.mp4" type="video/mp4">
+                            Trình duyệt của bạn không hỗ trợ tag video.
+                        </video>
+                        <div class="media-info">
+                            <h4>Khám phá không gian cửa hàng (Short 1)</h4>
+                            <p>Giới thiệu góc check-in ấm cúng, thiết kế cổ điển pha lẫn hiện đại.</p>
+                        </div>
+                    </div>
+                    <div class="media-card">
+                        <video controls>
+                            <source src="../vd/shortvideo2.mp4" type="video/mp4">
+                            Trình duyệt của bạn không hỗ trợ tag video.
+                        </video>
+                        <div class="media-info">
+                            <h4>Quy trình phục vụ Khách hàng (Short 2)</h4>
+                            <p>Khoảnh khắc tương tác, tư vấn menu bánh ngọt và cà phê.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Dashboard Grid: Charts and Activities -->
+            <div class="dashboard-grid fade-in">
+                <!-- Recent Orders Table -->
+                <div class="table-container">
+                    <div class="table-header">
+                        <h2><i class="fa-solid fa-clock-rotate-left"></i> Đơn hàng gần đây</h2>
+                        <a href="hoadon/list.html" class="btn btn-secondary btn-sm">Xem tất cả</a>
+                    </div>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Mã đơn</th>
+                                <th>Khách hàng</th>
+                                <th>Thời gian</th>
+                                <th>Loại đơn</th>
+                                <th>Tổng tiền</th>
+                                <th>Trạng thái</th>
+                            </tr>
+                        </thead>
+                        <tbody id="recent-orders-tbody">
+                            <!-- Populated by JS -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Recent Activities & Stats -->
+                <div class="chart-card">
+                    <h3><i class="fa-solid fa-bell"></i> Hoạt động gần đây</h3>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-dot success"></div>
+                            <div class="activity-text">Thu ngân <strong>Lê Văn Thu Ngân</strong> đã hoàn thành đơn #1001</div>
+                            <div class="activity-time">5 phút trước</div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-dot warning"></div>
+                            <div class="activity-text">Đơn hàng #1002 chuyển sang trạng thái <strong>Đang pha chế</strong></div>
+                            <div class="activity-time">12 phút trước</div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-dot info"></div>
+                            <div class="activity-text">Khách hàng mới <strong>Đỗ Quỳnh Chi</strong> đã đăng ký thành viên</div>
+                            <div class="activity-time">1 giờ trước</div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-dot danger"></div>
+                            <div class="activity-text">Hệ thống phát hiện lỗi đăng nhập từ IP lạ (User: admin)</div>
+                            <div class="activity-time">3 giờ trước</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Shop Image Gallery (from usecase/img2) -->
+            <section class="media-section fade-in" style="margin-top: 28px;">
+                <div class="table-header" style="background: none; border: none; padding: 0 0 16px 0;">
+                    <h2><i class="fa-solid fa-images"></i> Bộ sưu tập hình ảnh cửa hàng</h2>
+                </div>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="../img/z7972613819305_cd9e6af5027eae170ff9cbcb9cb4812b.jpg" alt="Không gian quán 1">
+                        <div class="gallery-overlay"><span>Góc bàn gỗ ấm áp</span></div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="../img/z7972613822394_5bfebeb53fba4a0b8be7aa7d02f1982e.jpg" alt="Không gian quán 2">
+                        <div class="gallery-overlay"><span>Khu vực quầy bar pha chế</span></div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="../img/z7972614002508_9050143639c5fc9037ea3a04b2e2990e.jpg" alt="Không gian quán 3">
+                        <div class="gallery-overlay"><span>Không gian tầng lửng</span></div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="../img/z7972614110677_4c6da063d8c9a409b22812a1b0a346e4.jpg" alt="Không gian quán 4">
+                        <div class="gallery-overlay"><span>Trang trí tường gạch cổ điển</span></div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="../img/z7972614135888_7598272b2b3b31a9aa4e1f475bfbb2dd.jpg" alt="Không gian quán 5">
+                        <div class="gallery-overlay"><span>Góc đón nắng bình yên</span></div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="../img/z7972614264508_c00d68107b0478ce0685b42c5fa2b463.jpg" alt="Không gian quán 6">
+                        <div class="gallery-overlay"><span>Menu và mặt tiền quán</span></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Core App JS -->
+    <script src="js/app.js"></script>
+    <script>
+        // Render sidebar
+        renderSidebar("dashboard", false);
+
+        // Fetch statistics
+        function updateStats() {
+            const invoices = DB.getInvoices();
+            const customers = DB.getCustomers();
+
+            // Calculate revenue
+            let revenue = 0;
+            let completedCount = 0;
+            let pendingCount = 0;
+
+            invoices.forEach(inv => {
+                if (inv.trangThai === "Đã thanh toán" || inv.trangThai === "Sẵn sàng giao") {
+                    revenue += inv.thanhTien;
+                    completedCount++;
+                } else if (inv.trangThai === "Đang pha chế" || inv.trangThai === "Chờ xử lý") {
+                    pendingCount++;
+                }
+            });
+
+            document.getElementById("stat-revenue").innerText = formatCurrency(revenue);
+            document.getElementById("stat-completed-orders").innerText = completedCount;
+            document.getElementById("stat-pending-orders").innerText = pendingCount;
+            document.getElementById("stat-customers").innerText = customers.length;
+
+            // Render recent orders
+            const recentBody = document.getElementById("recent-orders-tbody");
+            recentBody.innerHTML = "";
+
+            const customersMap = {};
+            customers.forEach(c => customersMap[c.maKhachHang] = c.hoTen);
+
+            // Sort invoices by date desc
+            const sortedInvoices = [...invoices].sort((a,b) => new Date(b.ngayDat) - new Date(a.ngayDat)).slice(0, 5);
+
+            sortedInvoices.forEach(inv => {
+                let statusClass = "badge-neutral";
+                if (inv.trangThai === "Đã thanh toán") statusClass = "badge-success";
+                else if (inv.trangThai === "Đang pha chế") statusClass = "badge-warning";
+                else if (inv.trangThai === "Sẵn sàng giao") statusClass = "badge-info";
+                else if (inv.trangThai === "Đã hủy") statusClass = "badge-danger";
+
+                const tr = document.createElement("tr");
+                tr.innerHTML = `
+                    <td class="cell-id">#${inv.maHoaDon}</td>
+                    <td class="cell-name">${customersMap[inv.khachHangId] || "Khách vãng lai"}</td>
+                    <td class="cell-muted">${inv.ngayDat}</td>
+                    <td>${inv.loaiDon}</td>
+                    <td class="cell-price">${formatCurrency(inv.thanhTien)}</td>
+                    <td><span class="badge ${statusClass}">${inv.trangThai}</span></td>
+                `;
+                recentBody.appendChild(tr);
+            });
+        }
+
+        updateStats();
+    </script>
+</body>
+</html>
